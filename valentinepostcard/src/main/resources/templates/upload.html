@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="fragments/header :: include-head"/>
+</head>
+<body>
+	
+	<th:block th:replace="fragments/header :: include-menu"/>
+	
+
+	<div class="container container-height">
+		<div class="starter-template">
+			
+			<form method="POST" th:action="@{/sending}" enctype="multipart/form-data" >
+				<div id="file">
+	            	<input type="file" name="image" />
+	            </div>
+	            <div id="err-size" class="error">
+					<span>The picture size exceeds the allowable limit 5 MB.</span>
+				</div>
+	            <div id="err-type" class="error">
+	            	<span >JPEG, JPG or PNG file</span>
+	            </div>
+	            <label>To:</label>
+	            <input type="text" name="to" maxlength="20" />
+	            <label>From:</label>
+	            <input type="text" name="from" maxlength="20" />
+	            <label>A love note:</label>
+	            <input type="text" name="letter" maxlength="50"/>
+	            <input type="submit" value="create" class="submit" />
+			</form>
+			
+		</div>
+	</div>
+	
+	<th:block th:replace="fragments/footer :: include-footer" />
+	
+</body>
+</html>

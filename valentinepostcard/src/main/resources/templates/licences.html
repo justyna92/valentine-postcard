@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="fragments/header :: include-head"/>
+</head>
+<body>
+	
+	<th:block th:replace="fragments/header :: include-menu"/>
+	
+
+	<div class="container container-height">
+		<div class="starter-template">
+			<p class="title">Sources of images</p>
+			<table>
+				<th:block th:each="item : ${licences}">
+					<tr>
+						<td th:text="${item.getKey()}"></td>
+						<td th:text="${item.getValue()}"></td>
+					</tr>
+				    	
+				</th:block>
+			</table>
+		</div>
+	</div>
+
+<th:block th:replace="fragments/footer :: include-footer" />
+
+</body>
+</html>

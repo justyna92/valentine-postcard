@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="fragments/header :: include-head" />
+</head>
+<body >
+
+	<th:block th:replace="fragments/header :: include-menu" />
+
+
+	<div class="container">
+		<div class="starter-template">
+		
+			<div id="postcard">
+				<div id="photo">
+					<img th:src="'data:image/png;charset=utf-8;base64,' + ${picture}" alt=""/>
+				</div>
+				<div id="vertical-line"></div>
+				<div id="description">
+					<div id="stamp">
+						<img src="/../../img/stamps.png" alt="" />
+					</div>
+					<div id="desc">
+						<p>To <span th:text="${to}"></span></p>
+						<p>From <span th:text="${from}"></span></p>
+						<p><span th:text="${letter}"></span></p>
+					</div>
+				</div>
+			</div>
+			<div id="download-box">
+				<button id="download" class="submit" onclick="downloadPostcard()">Download postcard</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<th:block th:replace="fragments/footer :: include-footer" />
+
+</body>
+</html>
